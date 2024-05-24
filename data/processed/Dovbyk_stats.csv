@@ -1,7 +1,7 @@
-Season,Age,Squad,Country,Comp,90s,LgRank,MP,Starts,Min,Gls,xG,Gls/90,Sh,SoT,SoT%,Sh/90,SoT/90,G/Sh,G/SoT
-2019-2020,22,Midtjylland,dk DEN,1. Superliga,0.6,1st,3,0,51,0,,0.0,1,0,0.0,1.76,0.00,0.00,
-2019-2020,22,SønderjyskE,dk DEN,1. Superliga,4.4,8th,18,1,397,2,,0.45454545454545453,12,6,50.0,2.72,1.36,0.17,0.33
-2020-2021,23,SK Dnipro-1,ua UKR,1. Premier League,20.1,7th,24,22,1811,6,,0.29850746268656714,,,,,,,
-2021-2022,24,SK Dnipro-1,ua UKR,1. Premier League,16.7,3rd,17,17,1506,14,,0.8383233532934132,,,,,,,
-2022-2023,25,SK Dnipro-1,ua UKR,1. Premier League,29.2,2nd,30,29,2625,24,,0.8219178082191781,,,,,,,
-2023-2024,26,Girona,es ESP,1. La Liga,27.7,3rd,35,31,2497,21,21.9,0.7581227436823105,75,35,46.7,2.70,1.26,0.21,0.46
+Season,Age,Squad,Country,Comp,90s,LgRank,MP,Starts,Min,Gls,xG,npxG,xAG,Gls/90,Sh,SoT,SoT%,Sh/90,SoT/90,G/Sh,G/SoT,Dist,FK,PK,PKatt
+2019-2020,22,Midtjylland,dk DEN,1. Superliga,0.6,1st,3,0,51,0,,,,0.0,1,0,0.0,1.76,0.00,0.00,,,,0,0
+2019-2020,22,SønderjyskE,dk DEN,1. Superliga,4.4,8th,18,1,397,2,,,,0.45454545454545453,12,6,50.0,2.72,1.36,0.17,0.33,,,0,0
+2020-2021,23,SK Dnipro-1,ua UKR,1. Premier League,20.1,7th,24,22,1811,6,,,,0.29850746268656714,,,,,,,,,,2,3
+2021-2022,24,SK Dnipro-1,ua UKR,1. Premier League,16.7,3rd,17,17,1506,14,,,,0.8383233532934132,,,,,,,,,,3,4
+2022-2023,25,SK Dnipro-1,ua UKR,1. Premier League,29.2,2nd,30,29,2625,24,,,,0.8219178082191781,,,,,,,,,,8,9
+2023-2024,26,Girona,es ESP,1. La Liga,27.7,3rd,35,31,2497,21,22.0,17.3,5.3,0.7581227436823105,75,35,46.7,2.70,1.26,0.21,0.46,12.1,1,5,6
