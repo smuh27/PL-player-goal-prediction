@@ -5,15 +5,25 @@ from collections import Counter
 from io import StringIO
 
 
+all_player_path = '../data/processed/player_shooting_2023_2024.csv'
+
 # URLs of players' pages
 haaland_url = 'https://fbref.com/en/players/1f44ac21/Erling-Haaland'
-similar_players_url = {
-    'Dovbyk': 'https://fbref.com/en/players/5b847bb0/Artem-Dovbyk', 
-    'Kane': 'https://fbref.com/en/players/21a66f6a/Harry-Kane', 
-    'Osimhen': 'https://fbref.com/en/players/8c90fd7a/Victor-Osimhen', 
-    'Joselu': 'https://fbref.com/en/players/6265208f/Joselu', 
-    'Vlahovic': 'https://fbref.com/en/players/79443529/Dusan-Vlahovic'
-}
+# similar_players_url = {
+#     'Dovbyk': 'https://fbref.com/en/players/5b847bb0/Artem-Dovbyk', 
+#     'Kane': 'https://fbref.com/en/players/21a66f6a/Harry-Kane', 
+#     'Osimhen': 'https://fbref.com/en/players/8c90fd7a/Victor-Osimhen', 
+#     'Joselu': 'https://fbref.com/en/players/6265208f/Joselu', 
+#     'Vlahovic': 'https://fbref.com/en/players/79443529/Dusan-Vlahovic'
+# }
+
+
+def clean_data(file_path, drop_columns=[]):
+    df = pd.read_csv(file_path)
+    df.drop(columns=drop_columns, inplace=True)
+    return df
+
+
 
 def get_table_by_name(soup, table_name):
     tables = soup.find_all('table')
@@ -37,7 +47,6 @@ def get_last_5_seasons_by_age(data_list, current_age):
 def scrape_player_data(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-
     player = get_player_name(url)
     print(f"Fetching data for: {player}")
     
@@ -67,9 +76,11 @@ def scrape_player_data(url):
 
 if __name__ == "__main__":
     data = scrape_player_data(haaland_url)
-    for player_name, player_url in similar_players_url.items():
-        similar_data = scrape_player_data(player_url)
-        similar_data.to_csv(f'../data/processed/{player_name}_stats.csv', index=False)
-    
+    # for player_name, player_url in similar_players_url.items():
+    #     similar_data = scrape_player_data(player_url)
+    #     similar_data.to_csv(f'../data/processed/{player_name}_stats.csv', index=False)
+    # all_player_data = clean_data(all_player_path,['Unnamed'])
+    # all_player_data.to_csv('../data/processed/player_shooting_2023_2024.csv', index=False)
     data.to_csv('../data/processed/Haaland_stats.csv', index=False)
     print("Data scraped and saved.")
+    
