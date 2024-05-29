@@ -40,8 +40,9 @@ def get_player_name(url):
     return name_span.text.strip() if name_span else None
 
 def get_last_5_seasons_by_age(data_list, current_age):
+    starting_age = int(data_list.iloc[0]['Age'])
     data_list['Age'] = pd.to_numeric(data_list['Age'], errors='coerce').fillna(0).astype(int)
-    last_5_seasons_data = data_list[(data_list['Age'] <= current_age) & (data_list['Age'] > current_age - 5)]
+    last_5_seasons_data = data_list[(data_list['Age'] <= current_age) & (data_list['Age'] > current_age - starting_age)]
     return last_5_seasons_data
 
 def scrape_player_data(url):
